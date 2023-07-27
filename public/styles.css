@@ -1,0 +1,27 @@
+body {
+    background-color: blanchedalmond;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+h1{
+    text-align: center;
+    text-decoration: underline;
+    background-color: black;
+    color: white;
+    padding: 0.5em;
+    margin-left: 25%;
+    margin-right: 25%;
+    border-radius: 0.2em;
+}
+
+.container{
+
+    padding: 2em;
+    background-color: azure;
+}
+.area {
+    border: 2px solid black;
+    border-radius: 0.5em;
+    padding: 1em;
+    text-align: center;
+}
