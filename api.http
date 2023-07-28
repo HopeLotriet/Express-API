@@ -1,3 +1,4 @@
+
 POST http://localhost:4011/api/greet
 content-type: application/json
 
@@ -6,12 +7,29 @@ content-type: application/json
     "greeting" : "Sawubona"
 }
 
+###
+POST https://greetings-api-tprw.onrender.com/api/greet
+content-type: application/json
+
+{
+    "language" : "IsiXhosa",
+    "greeting" : "Molo"
+}
+
+###
+POST https://greetings-api-tprw.onrender.com/api/greet
+content-type: application/json
+
+{
+    "language" : "IsiZulu",
+    "greeting" : "Sawubona"
+}
 
 ###
 POST http://localhost:4011/api/greet
 content-type: application/json
 
 {
-    "language" : "IsiXhosa",
-    "greeting" : "Molo"
+    "new_language" : "Xitsonga",
+    "new_greeting" : "Avuxeni"
 }

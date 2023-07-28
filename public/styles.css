@@ -18,10 +18,14 @@ h1{
 
     padding: 2em;
     background-color: azure;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 .area {
     border: 2px solid black;
     border-radius: 0.5em;
     padding: 1em;
     text-align: center;
+    
 }
+

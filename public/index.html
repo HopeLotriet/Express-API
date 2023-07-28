@@ -6,50 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="//unpkg.com/alpinejs" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js" defer></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"></script>
+    <script src="greet.js" defer></script>
 </head>
 
 <body>
     <h1>Greet API Widget</h1>
 
-    <div class="container">
-
-    <div x-data="{
-        username: 'Musawenkosi',
-        greeting: 'Hello',
-        language: 'English',
-        greet() {
-
-
-            // call the api and get a greeting back
-
-
-            axios
-                .get(`/api/greet?username=${this.username}&language=${this.language}`)
-                .then(result => {
-
-                    if (result.data.error) {
-                        this.greeting = result.data.error
-                    } else {
-                        this.greeting = result.data.message
-                    }
-
-            })
-            
-        }
-    }">
+    <div class="container" x-data="greetAPI">
 
         <div class="area" x-text="greeting"></div><br>
 
-        <!-- <div x-text="language"></div> -->
-
         <div>
-            <input type="radio" x-model="language" value="English" id="english">
+            <input type="radio" x-model="language" value="English" id="English">
             <label for="english">English</label>
-            <input type="radio" x-model="language" value="IsiXhosa" id="isixhosa">
+            <input type="radio" x-model="language" value="IsiXhosa" id="IsiXhosa">
             <label for="isixhosa">IsiXhosa</label>
-            <input type="radio" x-model="language" value="IsiZulu" id="isizulu">
+            <input type="radio" x-model="language" value="IsiZulu" id="IsiZulu">
             <label for="isizulu">IsiZulu</label>
         </div>
         <br>
@@ -57,21 +31,23 @@
         <input type="text" x-model="username">
         <input type="button" value="Greet" x-on:click="greet()">
 
-    </div>
+        <div class="language">
+            <h2>Add A Language</h2>
 
-    <div>
-        <h2>Add Language</h2>
+            <div>
+               Language: <input type="text" x-model="new_language" placeholder="New Language">
 
-        <div>
-           Language: <input type="text" x-model="new_language" placeholder="New Language">
+               Greeting: <input type="text" x-model="new_greeting" placeholder="New Greeting">
 
-           Greeting: <input type="text" x-model="new_greet" placeholder="New Greeting">
+               <button x-on:click="addLanguage()">Add Language</button>
+            </div>
+            <br>
 
-           <button x:on-click="">Add Language</button>
+            <div class="area" x-text="new_message"></div><br>
         </div>
     </div>
-
-    </div>
+    
+    <script src="//unpkg.com/alpinejs" defer></script>
 </body>
 
 </html>

@@ -10,7 +10,9 @@ app.get("/", function(req, res){
 })
 
 const greetings = {
-    'English' : 'Hello'
+    'English' : 'Hello',
+    'IsiXhosa': 'Molo',
+    'IsiZulu': 'Sawubona'
 }
 
 app.get("/api/greet", function(req, res) {
